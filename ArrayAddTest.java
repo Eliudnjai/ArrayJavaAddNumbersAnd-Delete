@@ -26,26 +26,33 @@ class ArrayAddTest {
                 try {
                 System.out.print("Which Number? ");
                 n = input.nextInt();
-                for(int i=0; i<10; i++){
-                    if(array[i]==n){
-                        System.out.println(exist=true);
-                        break;
-                    } 
+                for(int i=0; i<array.length; i++){
                     if(array[i] != n){
-                        array[index]=n;
-                        break;
-                    }
-                    }
-                    ++index;
+                        String user_input;
+                        System.out.println("Number does not exist");
+                        System.out.println("Adding number to array..................");
+                            array[index]=n;
+                            ++index;
+                            break;
+                        }
+                            else {
+                                if (array[i] == n) {
+                                    System.out.println(exist = true);
+                                    break;
+                                }
+                            }
+                        }
             } catch (ArrayIndexOutOfBoundsException ex){
                 System.out.println("That number does not exist, however no more room in the Array");
             }
             break;
+            
             case 3:
             try {
                 System.out.print("which index? ");
                 n = input.nextInt();
                 System.out.println(array[n]);
+                System.out.println("Confirm List ==> " + Arrays.toString(array));
                 
             } catch (ArrayIndexOutOfBoundsException z) {
                 System.out.println("Only index 1-9 are available");
@@ -61,7 +68,12 @@ class ArrayAddTest {
                     n = input.nextInt();
                     for(int i=0; i<array.length; i++){
                         if(array[i] == n){
-                            array[i] = 0;
+                            int x= 0;
+                            System.out.println("Deleting number...................");
+                            array[i] = x; 
+                            System.out.print("Number Deleted, New List ==>");
+                            System.out.println(Arrays.toString(array));
+                            break;
                         }
                         if(array[i] != n){
                             System.out.println("Number does not exist");
@@ -79,7 +91,7 @@ class ArrayAddTest {
     public static int choice() {
         // System.out.print("Press 1 for array Size: ");
         System.out.println("Press -1 to Delete a number: ");
-        System.out.println("Press o to see all the numbers: ");
+        System.out.println("Press 0 to see all the numbers: ");
         System.out.println("Press 1 to Enter array numbers: ");
         System.out.println("Press 2 to retrieve array number: ");
         System.out.println("Press 3 to retrieve array index: ");
